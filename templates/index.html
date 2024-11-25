@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Recognition App</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Recognition App</h1>
+        </header>
+
+        <!-- Display error message if any -->
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+
+        <!-- Upload form -->
+        <form action="/" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="file" class="form-label">Upload an image:</label>
+            <input 
+                type="file" 
+                name="file" 
+                id="file" 
+                accept="image/*" 
+                class="file-input" 
+                required
+                aria-label="Upload an image file for recognition">
+            
+            <label for="model" class="form-label">Select a model:</label>
+            <select name="model" id="model" class="dropdown" aria-label="Select a model for image recognition">
+                {% for model, details in models.items() %}
+                    <option value="{{ model }}">{{ model }} - {{ details.description }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit" class="btn-submit">Analyze</button>
+        </form>
+
+        <!-- Results Section -->
+        {% if results %}
+            <section class="results-section">
+                <h2>Results:</h2>
+                <img 
+                    src="{{ uploaded_image }}" 
+                    alt="Uploaded image preview" 
+                    class="uploaded-img">
+                
+                <ul class="predictions-list">
+                    {% for result in results %}
+                        <li>{{ result.label }}: {{ result.probability }}</li>
+                    {% endfor %}
+                </ul>
+                
+            </section>
+        {% endif %}
+
+        <p>© 2024 KADAVAKOLLU NITIN SATYA. All rights reserved.</p>
+    </div>
+</body>
+</html>

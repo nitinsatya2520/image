@@ -1,0 +1,127 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #007BFF;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Form styles */
+.upload-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.dropdown,
+.file-input,
+.btn-submit {
+    display: block;
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown:focus,
+.file-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-submit:focus {
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Results styles */
+.results-section {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.uploaded-img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.predictions-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.predictions-list li {
+    background: #f9f9f9;
+    margin: 8px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.predictions-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    .form-label, .btn-submit, .predictions-list li {
+        font-size: 0.9rem;
+    }
+}

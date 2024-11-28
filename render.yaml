@@ -1,0 +1,7 @@
+web:
+  build:
+    cmd: gunicorn app:app --workers 3
+  numReplicas: 1
+  paths:
+    - "app.py"
+    - "requirements.txt"

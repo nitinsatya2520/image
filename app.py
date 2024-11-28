@@ -14,6 +14,7 @@ from tensorflow.keras.applications.resnet import (
 )
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from PIL import Image
+from tensorflow.keras.applications.mobilenet import MobileNet, preprocess_input, decode_predictions
 
 app = Flask(__name__)
 
@@ -37,6 +38,14 @@ MODEL_CONFIG = {
         "preprocess": resnet_preprocess,
         "decode": resnet_decode,
         "description": "Deep residual network for image recognition.",
+        "input_size": (224, 224),
+    },
+     "MobileNet": {
+        "class": MobileNet,
+        "weights": "imagenet",
+        "preprocess": preprocess_input,
+        "decode": decode_predictions,
+        "description": "Lightweight and efficient neural network.",
         "input_size": (224, 224),
     },
 }

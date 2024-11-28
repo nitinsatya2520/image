@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Image Recognition App</h1>
+            <h1>🌟 Image Recognition App 🌟</h1>
+            <p class="tagline">Upload an image and let AI identify it for you!</p>
         </header>
 
         <!-- Display error message if any -->
@@ -43,21 +44,23 @@
         {% if results %}
             <section class="results-section">
                 <h2>Results:</h2>
-                <img 
-                    src="{{ uploaded_image }}" 
-                    alt="Uploaded image preview" 
-                    class="uploaded-img">
-                
+                <div class="image-preview">
+                    <img 
+                        src="{{ uploaded_image }}" 
+                        alt="Uploaded image preview" 
+                        class="uploaded-img">
+                </div>
                 <ul class="predictions-list">
                     {% for result in results %}
-                        <li>{{ result.label }}: {{ result.probability }}</li>
+                        <li><strong>{{ result.label }}</strong>: {{ result.probability }}</li>
                     {% endfor %}
                 </ul>
-                
             </section>
         {% endif %}
 
-        <p>© 2024 KADAVAKOLLU NITIN SATYA. All rights reserved.</p>
+        <footer>
+            <p>© 2024 KADAVAKOLLU NITIN SATYA. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
